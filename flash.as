@@ -5,8 +5,5 @@ keyListener.onKeyDown = function () {
     if (keycode == 37) {
         direction = 'left'
     }
-    else if (keycode == 40) {
-        direction = 'down'
-    }
 };
 Key.addListener(keyListener);
