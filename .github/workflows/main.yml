@@ -28,6 +28,6 @@ jobs:
           echo "StartingActions.."
           echo "-----------------"
           if [[ "${{ github.event.commits[0].message }}" == *"#BUILD"* ]]; then
-            curl -d "commitmsg=${{ github.event.commits[0].message }}&test=1&secret=${{ secrets.SuperSecret }}" -X POST https://unitycoder.com/temp/testpush.php
+            curl -d "commitmsg=${{ github.event.commits[0].message }}&test=1&secret=${{ secrets.SECRET_KEY }}" -X POST https://unitycoder.com/temp/testpush.php
           fi
           
