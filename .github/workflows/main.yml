@@ -27,4 +27,7 @@ jobs:
         run: |
           echo "StartingActions.."
           echo "-----------------"
-          curl -d "commitmsg=${{ github.event.commits[0].message }}" -X POST https://unitycoder.com/temp/testpush.php
+          if [[ "${{ github.event.commits[0].message }}" == *"#BUILD"* ]]; then
+            curl -d "commitmsg=${{ github.event.commits[0].message }}" -X POST https://unitycoder.com/temp/testpush.php
+          fi
+          
